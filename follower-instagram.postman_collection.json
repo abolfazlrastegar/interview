@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "6d16c802-6cae-4cf7-96e3-8642d969dc8f",
+		"name": "follower-instagram",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "7408572"
+	},
+	"item": [
+		{
+			"name": "{{url}}/api/login?email=abolfazlrastegar1996@gmail.com&password=123456",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/login?email=abolfazlrastegar1996@gmail.com&password=123456",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"login"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "abolfazlrastegar1996@gmail.com"
+						},
+						{
+							"key": "password",
+							"value": "123456"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{base_url}}/order/new/?quantity=55&username_instagram=abolfazlrastegar.f",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/order/new/?quantity=55&username_instagram=abolfazlrastegar.f",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"order",
+						"new",
+						""
+					],
+					"query": [
+						{
+							"key": "quantity",
+							"value": "55"
+						},
+						{
+							"key": "username_instagram",
+							"value": "abolfazlrastegar.f"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{base_url}}/follower/new?order_id=1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "1|nMOL0W66TOkkvO2QfAnxQ9hFYOX07Bz3tTy9hwaC"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/follower/new?order_id=1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"follower",
+						"new"
+					],
+					"query": [
+						{
+							"key": "order_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{base_url}}/order/list",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "1|nMOL0W66TOkkvO2QfAnxQ9hFYOX07Bz3tTy9hwaC"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{base_url}}/order/list"
+			},
+			"response": []
+		}
+	]
+}

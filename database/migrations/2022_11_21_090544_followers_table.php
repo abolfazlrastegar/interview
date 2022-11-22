@@ -13,7 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-
+        Schema::create('followers', function (Blueprint $table) {
+            $table->id();
+            $table->bigInteger('user_id')->index()->nullable();
+            $table->bigInteger('order_id')->index()->nullable();
+            $table->boolean('status')->default(0);
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('followers');
     }
 };
