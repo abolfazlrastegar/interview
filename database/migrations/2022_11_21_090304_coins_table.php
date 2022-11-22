@@ -17,8 +17,8 @@ return new class extends Migration
            $table->id();
            $table->bigInteger('user_id')->index()->nullable();
            $table->integer('quantity');
-           $table->enum('type',  ['buy', 'follower', 'following'])->default('buy');
-           $table->timestamp();
+           $table->enum('type',  ['buy', 'follow', 'follower'])->default('buy');
+           $table->timestamps();
 
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('coins');
     }
 };

@@ -2,7 +2,30 @@
 
 namespace App\Repository\v1;
 
-class RepositoryCoin
+use App\Models\Coin;
+
+class RepositoryCoin implements \App\Repository\Db
 {
 
+    public static function insert($data)
+    {
+        $coin = new Coin();
+        $coin->user_id = $data['user_id'];
+        $coin->quantity = $data['quantity'];
+        $coin->type = $data['type'];
+
+        return $coin->save();
+    }
+
+    public static function show($data = null)
+    {
+        // TODO: Implement show() method.
+    }
+
+    public static function sumCoinUser($user_id)
+    {
+        $sum_coin = Coin::query()->where('user_id', '=', $user_id)->sum('quantity');
+
+        return $sum_coin;
+    }
 }

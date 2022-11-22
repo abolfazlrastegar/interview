@@ -17,8 +17,9 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('user_id')->index()->nullable();
             $table->integer('quantity')->nullable();
-            $table->boolean('status')->default(0);
-            $table->timestamp();
+            $table->boolean('status')->default(1);
+            $table->string('username_instagram')->nullable();
+            $table->timestamps();
         });
     }
 

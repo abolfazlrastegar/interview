@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('user_id')->index()->nullable();
             $table->bigInteger('order_id')->index()->nullable();
-            $table->boolean('status')->default(0);
+            $table->enum('status', ['success', 'pending'])->default('pending');
             $table->timestamps();
         });
     }
