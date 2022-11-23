@@ -3,8 +3,9 @@
 namespace App\Repository\v1;
 
 use App\Models\Coin;
+use App\Repository\CoinInterface;
 
-class RepositoryCoin implements \App\Repository\Db
+class RepositoryCoin implements CoinInterface
 {
 
     public static function insert($data)

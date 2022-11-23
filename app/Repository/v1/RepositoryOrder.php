@@ -4,9 +4,10 @@ namespace App\Repository\v1;
 
 use App\Models\Follower;
 use App\Models\Order;
-use App\Repository\Db;
+use App\Repository\OrderInterface;
 
-class RepositoryOrder implements Db
+
+class RepositoryOrder implements OrderInterface
 {
     public static function insert($data)
     {

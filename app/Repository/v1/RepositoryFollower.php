@@ -4,8 +4,9 @@ namespace App\Repository\v1;
 
 use App\Models\Follower;
 use App\Models\Order;
+use App\Repository\FollowerInterface;
 
-class RepositoryFollower implements \App\Repository\Db
+class RepositoryFollower implements FollowerInterface
 {
 
     public static function insert($data)
